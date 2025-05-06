@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Inventory System</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Move Product</h1>
+    <form action="{{ url_for('addmovement') }}" method="POST">
+      <label>Product Name:</label><br />
+      <select name="product_name" required>
+        {% for p in pro %}
+        <option value="{{ p.product_name }}">{{ p.product_name }}</option>
+        {% endfor %}</select
+      ><br /><br />
+
+      <label>From Location:</label><br />
+      <select name="from_location" required>
+        <option value="Warehouse">Warehouse</option>
+        {% for l in loc %}
+        <option value="{{ l.location_name }}">{{ l.location_name }}</option>
+        {% endfor %}</select
+      ><br /><br />
+
+      <label>To Location:</label><br />
+      <select name="to_location" required>
+        <option value="Warehouse">Warehouse</option>
+        {% for l in loc %}
+        <option value="{{ l.location_name }}">{{ l.location_name }}</option>
+        {% endfor %}</select
+      ><br /><br />
+
+      <label>Quantity:</label><br />
+      <input type="number" name="quantity" required /><br /><br />
+      <input type="submit" value="Save Movement" />
+    </form>
+  </body>
+</html>

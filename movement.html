@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Inventory System</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    {% extends "index.html" %}
+    {% block content %}
+    <h1>Inventory System</h1>
+
+    <h4>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            {{ message }}
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+    </h4>
+
+    <p><a href="{{ url_for('addmovement') }}">Move Products</a></p>
+    <table>
+      <tr>
+        <th>Movement ID</th>
+        <th>Product Name</th>
+        <th>From Location</th>
+        <th>To Location</th>
+        <th>Quantity</th>
+        <th>Delete</th>
+      </tr>
+      {% for m in movement %}
+        <tr>
+          <td>{{ m.id }}</td>
+          <td>{{ m.product_name }}</td>
+          <td>{{ m.from_location }}</td>
+          <td>{{ m.to_location }}</td>
+          <td>{{ m.quantity }}</td>
+          <td>
+            <a
+              onclick="return confirm('Are you sure you want to delete this movement?');"
+              href="{{ url_for('deleteMovement', id=m.id) }}"
+            >Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+    {% endblock %}
+  </body>
+</html>

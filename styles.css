@@ -1,0 +1,97 @@
+/* Elegant Inventory System Styles */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Subtle dark gradient */
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    color: #00ff7f;
+    margin-top: 30px;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px #001;
+}
+
+/* Table styles */
+table {
+    width: 90%;
+    margin: 40px auto;
+    background-color: rgba(0, 0, 0, 0.85);
+    border-radius: 10px;
+    overflow: hidden;
+    border-collapse: collapse;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+th {
+    background-color: #222;
+    color: #00ffff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+tr:hover {
+    background-color: rgba(0, 255, 255, 0.1);
+}
+
+/* Inputs */
+input[type="text"],
+input[type="number"] {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    background: #111;
+    color: #0ff;
+    border: 1px solid #0ff;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Buttons */
+input[type="submit"],
+input[type="reset"],
+button {
+    background: transparent;
+    color: #0ff;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border: 2px solid #0ff;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:hover {
+    background: #0ff;
+    color: #000;
+}
+
+/* Responsive behavior */
+@media screen and (max-width: 768px) {
+    table, input, button {
+        width: 95%;
+        font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>Inventory system</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    </head>
+    <body>
+        <h1>Add New User Details</h1>
+        <form action="{{ url_for('addLocation') }}" method='POST'>
+            <label>Location Name:</label><br>
+            <input type='text'name='l_name' required><br><br>
+            <input type='submit' value='Save Details'>
+    </body>
+</html>

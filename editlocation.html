@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>Inventory system</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    </head>
+    <body>
+        <h1>Update User Details</h1>
+        <form action="{{ url_for('editlocation', location_id=data.location_id) }}" method='POST'>
+            <label>Product Name:</label><br>
+            <input type='text'name='l_name' value = "{{data.location_name}}"required><br><br>
+            <input type='submit' value='Update Details'>
+    </body>
+</html>

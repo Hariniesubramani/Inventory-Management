@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <title>{% block title %}Inventory System{% endblock %}</title>
+        <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='styles.css') }}"
+        />
+        <style>
+            body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        background-color: #f8f9fa;
+      }
+
+      header {
+        background-color: #e9ecef;
+        padding: 20px;
+      }
+
+      nav {
+        background-color: #dee2e6;
+        padding: 10px;
+      }
+
+      nav a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 20px auto;
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      table {
+        width: 80%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      th, td {
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: center;
+      }
+
+      .btn {
+        padding: 5px 12px;
+        border: none;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .btn-edit {
+        background-color: #ffc107;
+      }
+
+      .btn-delete {
+        background-color: #dc3545;
+      }
+
+      .btn-add {
+        background-color: #28a745;
+        float: right;
+        margin-bottom: 10px;
+      }
+        </style>
+  </head>
+    <body>
+        <h1>Welcome to Inventory System</h1>
+        <a href="{{ url_for('home') }}"><button class="nav-button">Product Page</button></a>
+        <a href="{{ url_for('location') }}"><button class="nav-button">Location Page</button></a>
+        <a href="{{ url_for('movement') }}"><button class="nav-button">Movement Page</button></a>
+        <a href="{{ url_for('report') }}"><button class="nav-button">Stock Report</button></a>
+        {% block content %}{% endblock %}
+    </body>
+</html>

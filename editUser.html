@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Inventory system</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    </head>
+    <body>
+        <h1>Update User Details</h1>
+        <form action="{{ url_for('editUser', product_id=data.product_id) }}" method='POST'>
+            <label>Product Name:</label><br>
+            <input type='text'name='p_name' value = "{{data.product_name}}"required><br><br>
+            <label>Price:</label><br>
+            <input type='text'name='price' value = "{{data.price}}"required><br><br>
+            <label>Quantity:</label><br>
+            <input type='text'name='quantity' value = "{{data.quantity}}"required><br><br>
+            <input type='submit' value='Update Details'>
+    </body>
+</html>
